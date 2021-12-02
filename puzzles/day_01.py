@@ -6,7 +6,7 @@ from utils.io import stream_lines
 
 
 def get_input():
-    return [int(line) for line in stream_lines('01')]
+    return [int(line) for line in stream_lines(1)]
 
 
 def main():
