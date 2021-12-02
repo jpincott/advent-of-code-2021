@@ -1,6 +1,8 @@
+from utils.io import stream_input
+
+
 def get_input():
-    with open('../input/day_02.txt') as f:
-        return [(d[0], int(x)) for d, x in (l.split() for l in f)]
+    return [(d[0], int(x)) for d, x in map(str.split, stream_input(day=2))]
 
 
 def main():
@@ -21,11 +23,12 @@ def main():
     for d, x in steps:
         match d:
             case 'f':
-                xpos, depth = xpos + x, depth + aim * x
+                xpos += x
+                depth += aim * x
             case 'd':
-                aim = aim + x
+                aim += x
             case 'u':
-                aim = aim - x
+                aim -= x
     print(pt2 := xpos * depth)
 
 

@@ -2,11 +2,11 @@ from itertools import pairwise
 
 from more_itertools import windowed
 
-from utils.io import stream_lines
+from utils.io import stream_input
 
 
 def get_input():
-    return [int(line) for line in stream_lines(1)]
+    return [int(line) for line in stream_input(day=1)]
 
 
 def main():
