@@ -19,7 +19,7 @@ def main():
         'd': lambda sub, aim, x: (sub, aim + x),
         'u': lambda sub, aim, x: (sub, aim - x)
     }
-    sub, _ = reduce(lambda acc, step: actions[step[0]](*acc, step[1]), steps, (0, 0))
+    sub, _ = reduce(lambda state, step: actions[step[0]](*state, step[1]), steps, (0, 0))
     print(pt2 := f"{sub.real * sub.imag:.0f}")
 
 
